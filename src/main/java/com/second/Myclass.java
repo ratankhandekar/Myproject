@@ -14,11 +14,5 @@ public class Myclass {
 		return s;
 		
 	}
-	@RequestMapping("aaabb")
-	Student jasdkhdfs()
-	{
-		Student s=new Student(1, "gauri", 38);
-		return s;
-		
-	}
+	
 }
