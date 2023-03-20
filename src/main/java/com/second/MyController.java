@@ -1,5 +1,7 @@
 package com.second;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,14 @@ public class MyController {
 		studentRepository.save(student);
 		return 1;
 	}
+	
+	@RequestMapping("getAll")
+	List<Student> getAll()
+	{
+		List<Student> list= studentRepository.findAll();
+		return list;
+	}
+	
 	
 	
 	
