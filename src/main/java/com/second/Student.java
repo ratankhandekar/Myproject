@@ -1,25 +1,27 @@
 package com.second;
 
-public class Student {
-	int rn;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Student 
+{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
 	String name;
 	int marks;
-	@Override
-	public String toString() {
-		return "Student [rn=" + rn + ", name=" + name + ", marks=" + marks + "]";
-	}
-	public Student(int rn, String name, int marks) {
-		super();
-		this.rn = rn;
-		this.name = name;
-		this.marks = marks;
-	}
 	
-	public int getRn() {
-		return rn;
+	
+	
+	public int getId() {
+		return id;
 	}
-	public void setRn(int rn) {
-		this.rn = rn;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -33,6 +35,22 @@ public class Student {
 	public void setMarks(int marks) {
 		this.marks = marks;
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+	}
+	public Student(int id, String name, int marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+	}
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 
 }
