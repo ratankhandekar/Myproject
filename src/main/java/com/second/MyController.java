@@ -20,7 +20,7 @@ public class MyController {
 		studentRepository.save(student);
 		return 1;
 	}
-
+	//testing
 	@RequestMapping("getAll")
 	List<Student> getAll() {
 		List<Student> list = studentRepository.findAll();
@@ -33,6 +33,8 @@ public class MyController {
 		studentRepository.deleteById(id);
 		return "delete";
 	}
+	
+	
 	
 	
 
