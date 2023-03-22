@@ -14,28 +14,34 @@ public class MyController {
 	@Autowired
 	StudentRepository studentRepository;
 
+	// save
 	@RequestMapping("save")
-	int save(@RequestBody Student student) {
+	String save(@RequestBody Student student) {
 
 		studentRepository.save(student);
-		return 1;
+		return "success";
 	}
-	//testing
+
+	// getallStudent
 	@RequestMapping("getAll")
 	List<Student> getAll() {
 		List<Student> list = studentRepository.findAll();
 		return list;
 	}
-	
-	@RequestMapping("delete/{id}")
-	String delete(@PathVariable int id)
-	{
-		studentRepository.deleteById(id);
-		return "delete";
+
+	// getstudentbyidasdasd
+	@RequestMapping("getstudent/{id}")
+	Student getstudentbyid(@PathVariable int id) {
+		return studentRepository.findById(id).get();
 	}
 	
 	
 	
+	@RequestMapping("delete/{id}")
+	String delete(@PathVariable int id) {
+		studentRepository.deleteById(id);
+		return "delete";
 	
+	}
 
 }
